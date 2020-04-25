@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
+using NAudio;
+using NAudio.Wave;
+using SimpleFileBrowser;
 
 [RequireComponent (typeof (AudioSource))]
 
@@ -30,25 +33,23 @@ public class AudioVisualize : MonoBehaviour
 		_audioSource.GetSpectrumData(_samples, 0, FFTWindow.Blackman);
 	}
 
-	public void OpenSingleFile()
+	public void OpenMp3File()
 	{
-
-		path = EditorUtility.OpenFilePanel("Open Mp3 File", "", "mp3");
-		LoadSong();
-
+		FileBrowser.SetFilters(false, new FileBrowser.Filter("Open MP3 File", ".mp3"));
+		FileBrowser.SetDefaultFilter(".mp3");
+		StartCoroutine(ShowLoadDialogCoroutine());
 	}
 
-	public void LoadSong()
+	IEnumerator ShowLoadDialogCoroutine()
 	{
-		if (path != null)
+		yield return FileBrowser.WaitForLoadDialog(false, null, "Load MP3", "Select");
+		path = FileBrowser.Result;
+
+		if(FileBrowser.Success)
 		{
-			UpdateSong();
+			byte[] audioFile = FileBrowserHelpers.ReadBytesFromFile(path);
+			yield return audioFile;
+			_audioSource.clip = NAudioPlayer.FromMp3Data(audioFile);
 		}
-	}
-
-	public void UpdateSong()
-	{
-		WWW www = new WWW("file:///" + path);
-		_audioSource.clip = NAudioPlayer.FromMp3Data(www.bytes);
 	}
 }
