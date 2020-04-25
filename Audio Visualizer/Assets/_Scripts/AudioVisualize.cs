@@ -16,17 +16,30 @@ public class AudioVisualize : MonoBehaviour
 
 	string path;
 
+	public Text musicTitle;
+	public Text clipTime;
+
+	string musicFileName;
+
+	private int fullLength;
+	private int playTime;
+	private int seconds;
+	private int minutes;
+
     // Start is called before the first frame update
     void Start()
     {
 		_audioSource = GetComponent<AudioSource>();
+		musicFileName = "Song Name";
     }
 
     // Update is called once per frame
     void Update()
     {
 		GetSpectrumAudioSource();
-    }
+		ShowPlayTime();
+		ShowCurrentTitle();
+	}
 
 	void GetSpectrumAudioSource()
 	{
@@ -48,8 +61,24 @@ public class AudioVisualize : MonoBehaviour
 		if(FileBrowser.Success)
 		{
 			byte[] audioFile = FileBrowserHelpers.ReadBytesFromFile(path);
+			musicFileName = FileBrowserHelpers.GetFilename(path);
 			yield return audioFile;
 			_audioSource.clip = NAudioPlayer.FromMp3Data(audioFile);
 		}
+	}
+
+	void ShowCurrentTitle()
+	{
+		musicTitle.text = musicFileName;	
+	}
+
+	void ShowPlayTime()
+	{
+		playTime = (int)_audioSource.time;
+		fullLength = (int)_audioSource.clip.length;
+		seconds = playTime;
+		minutes = (playTime / 60) % 60;
+		clipTime.text = minutes + ":" + seconds.ToString("D2") + "/" + ((fullLength / 60 ) % 60) + ":" + (fullLength % 60).ToString("D2");
+
 	}
 }
