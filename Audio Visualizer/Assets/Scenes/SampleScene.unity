@@ -396,6 +396,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1863836091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 325070905276095149, guid: 38cc2491b807b5e48b40a1146556f89a,
+    type: 3}
+  m_PrefabInstance: {fileID: 325070906581148790}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &1863836096
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863836091}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1863836097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863836091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 063120c2a0b43d84590663daaf1512ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 1863836096}
 --- !u!114 &1878438384 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3659539242670852390, guid: 54ef9e179ed72404599037ca6fd60128,
@@ -546,6 +577,23 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1878438384}
+    - target: {fileID: 325070905630430862, guid: 38cc2491b807b5e48b40a1146556f89a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 197.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 325070905630430862, guid: 38cc2491b807b5e48b40a1146556f89a,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 125.45668
+      objectReference: {fileID: 0}
+    - target: {fileID: 325070905630430863, guid: 38cc2491b807b5e48b40a1146556f89a,
+        type: 3}
+      propertyPath: m_Text
+      value: "Controls: \nWASD - to move\nQ - raise camera\nE - lower camera\nHold
+        Shift - fast camera\nHold Ctrl - slow camera\nC - Toggle Cursor\nT - Toggle
+        UI\n"
+      objectReference: {fileID: 0}
     - target: {fileID: 325070905915318093, guid: 38cc2491b807b5e48b40a1146556f89a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -568,17 +616,17 @@ PrefabInstance:
     - target: {fileID: 3659539242670852388, guid: 54ef9e179ed72404599037ca6fd60128,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 251.82973
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3659539242670852388, guid: 54ef9e179ed72404599037ca6fd60128,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3659539242670852388, guid: 54ef9e179ed72404599037ca6fd60128,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 309.9989
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3659539242670852388, guid: 54ef9e179ed72404599037ca6fd60128,
         type: 3}
@@ -704,5 +752,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6832763870775749231, guid: 4888c9cfc50e4b947993f5b2a0f7620f,
+        type: 3}
+      propertyPath: canvasGroup
+      value: 
+      objectReference: {fileID: 1863836096}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4888c9cfc50e4b947993f5b2a0f7620f, type: 3}
