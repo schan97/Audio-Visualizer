@@ -13,6 +13,7 @@ public class AudioVisualize : MonoBehaviour
 {
 	AudioSource audioSource;
 	public static float[] samples = new float[512];
+	public static float[] freqBands = new float[8];
 
 	string path;
 
@@ -39,6 +40,7 @@ public class AudioVisualize : MonoBehaviour
     void Update()
     {
 		GetSpectrumAudioSource();
+		MakeFrequencyBands();
 		ShowPlayTime();
 		ShowCurrentTitle();
 	}
@@ -46,6 +48,54 @@ public class AudioVisualize : MonoBehaviour
 	void GetSpectrumAudioSource()
 	{
 		audioSource.GetSpectrumData(samples, 0, FFTWindow.Blackman);
+	}
+
+	void MakeFrequencyBands()
+	{
+		/*
+		 *	22050 / 512 = 43 hertz per sample
+		 * 	
+		 * 	20-60 hertz
+		 * 	60-250 hertz
+		 * 	250-500 hertz
+		 * 	500-2000 hertz
+		 * 	2000-4000 hertz
+		 * 	4000-6000 hertz
+		 * 	6000-20000 hertz
+		 *  
+		 *  0 : 2 =	86 hertz (43*2)
+		 *  1 : 4 = 172 hertz		range 87-258
+		 *  2 : 8 = 344 hertz		259 - 602
+		 *  3 : 16 = 688 hertz		603 - 1290
+		 *  4 : 32 = 1376 hertz		1291 - 2666
+		 *  5 : 64 = 2752 hertz		2667 - 5418
+		 *  6 : 128 = 5504 hertz	5419 - 10922
+		 *  7 : 256 = 11008 hertz	10923 - 21930
+		 * 	510
+		 */
+
+		int count = 0;
+
+		for (int i = 0; i < 8; i++)
+		{
+			float avg = 0;
+			int sampleCount = (int)Mathf.Pow(2, i) * 2;
+
+			if (i == 7)
+			{
+				sampleCount += 2;
+			}
+
+			for (int j = 0; j < sampleCount; j++)
+			{
+				avg += samples[count] * (count + 1);
+				count++;
+			}
+
+			avg /= count;
+
+			freqBands[i] = avg * 10;
+		}
 	}
 
 	void OpenMp3File()
