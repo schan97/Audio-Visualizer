@@ -11,8 +11,8 @@ using SimpleFileBrowser;
 
 public class AudioVisualize : MonoBehaviour
 {
-	AudioSource _audioSource;
-	public static float[] _samples = new float[512];
+	AudioSource audioSource;
+	public static float[] samples = new float[512];
 
 	string path;
 
@@ -31,7 +31,7 @@ public class AudioVisualize : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-		_audioSource = GetComponent<AudioSource>();
+		audioSource = GetComponent<AudioSource>();
 		musicFileName = "Song Name";
     }
 
@@ -45,7 +45,7 @@ public class AudioVisualize : MonoBehaviour
 
 	void GetSpectrumAudioSource()
 	{
-		_audioSource.GetSpectrumData(_samples, 0, FFTWindow.Blackman);
+		audioSource.GetSpectrumData(samples, 0, FFTWindow.Blackman);
 	}
 
 	void OpenMp3File()
@@ -64,11 +64,11 @@ public class AudioVisualize : MonoBehaviour
 		{
 			byte[] audioFile = FileBrowserHelpers.ReadBytesFromFile(path);
 			musicFileName = FileBrowserHelpers.GetFilename(path);
-			_audioSource.clip = NAudioPlayer.FromMp3Data(audioFile);
-			fullLength = (int)_audioSource.clip.length;
+			audioSource.clip = NAudioPlayer.FromMp3Data(audioFile);
+			fullLength = (int)audioSource.clip.length;
 
 			canJump = true;
-			_audioSource.time = 0;
+			audioSource.time = 0;
 		}
 	}
 
@@ -79,7 +79,7 @@ public class AudioVisualize : MonoBehaviour
 
 	void ShowPlayTime()
 	{
-		playTime = (int)_audioSource.time;
+		playTime = (int)audioSource.time;
 		seconds = playTime % 60;
 		minutes = (playTime / 60) % 60;
 		clipTime.text = minutes + ":" + seconds.ToString("D2") + "/" + ((fullLength / 60) % 60) + ":" + (fullLength % 60).ToString("D2");
@@ -89,14 +89,14 @@ public class AudioVisualize : MonoBehaviour
 	{
 		if(canJump != false)
 		{
-			if (_audioSource.time + 5 < _audioSource.clip.length)
+			if (audioSource.time + 5 < audioSource.clip.length)
 			{
-				_audioSource.time += 5;
+				audioSource.time += 5;
 			}
 
 			else
 			{
-				_audioSource.time = 0;
+				audioSource.time = 0;
 			}
 		}
 	}
@@ -105,14 +105,14 @@ public class AudioVisualize : MonoBehaviour
 	{
 		if (canJump != false)
 		{
-			if (_audioSource.time - 5 > 0)
+			if (audioSource.time - 5 > 0)
 			{
-				_audioSource.time -= 5;
+				audioSource.time -= 5;
 			}
 
 			else
 			{
-				_audioSource.time = 0;
+				audioSource.time = 0;
 			}
 		}
 	}
