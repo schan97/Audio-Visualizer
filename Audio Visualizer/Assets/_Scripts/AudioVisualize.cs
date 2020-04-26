@@ -62,8 +62,8 @@ public class AudioVisualize : MonoBehaviour
 		{
 			byte[] audioFile = FileBrowserHelpers.ReadBytesFromFile(path);
 			musicFileName = FileBrowserHelpers.GetFilename(path);
-			yield return audioFile;
 			_audioSource.clip = NAudioPlayer.FromMp3Data(audioFile);
+			fullLength = (int)_audioSource.clip.length;
 		}
 	}
 
@@ -75,10 +75,8 @@ public class AudioVisualize : MonoBehaviour
 	void ShowPlayTime()
 	{
 		playTime = (int)_audioSource.time;
-		fullLength = (int)_audioSource.clip.length;
-		seconds = playTime;
+		seconds = playTime % 60;
 		minutes = (playTime / 60) % 60;
-		clipTime.text = minutes + ":" + seconds.ToString("D2") + "/" + ((fullLength / 60 ) % 60) + ":" + (fullLength % 60).ToString("D2");
-
+		clipTime.text = minutes + ":" + seconds.ToString("D2") + "/" + ((fullLength / 60) % 60) + ":" + (fullLength % 60).ToString("D2");
 	}
 }
