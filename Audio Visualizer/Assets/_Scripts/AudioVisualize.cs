@@ -14,6 +14,8 @@ public class AudioVisualize : MonoBehaviour
 	AudioSource audioSource;
 	public static float[] samples = new float[512];
 	public static float[] freqBands = new float[8];
+	public static float[] bandBuffer = new float[8];
+	float[] bufferDecrease = new float[8];
 
 	string path;
 
@@ -41,6 +43,7 @@ public class AudioVisualize : MonoBehaviour
     {
 		GetSpectrumAudioSource();
 		MakeFrequencyBands();
+		BandBuffer();
 		ShowPlayTime();
 		ShowCurrentTitle();
 	}
@@ -48,6 +51,24 @@ public class AudioVisualize : MonoBehaviour
 	void GetSpectrumAudioSource()
 	{
 		audioSource.GetSpectrumData(samples, 0, FFTWindow.Blackman);
+	}
+
+	void BandBuffer()
+	{
+		for(int i = 0; i < 8; i++)
+		{
+			if (freqBands[i] > bandBuffer[i])
+			{
+				bandBuffer[i] = freqBands[i];
+				bufferDecrease[i] = 0.005f;
+			}
+
+			if (freqBands[i] < bandBuffer[i])
+			{
+				bufferDecrease[i] = (bandBuffer[i] - freqBands[i]) / 8;
+				bandBuffer[i] -= bufferDecrease[i];
+			}
+		}
 	}
 
 	void MakeFrequencyBands()
