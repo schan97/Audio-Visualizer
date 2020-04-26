@@ -12,7 +12,7 @@ using SimpleFileBrowser;
 public class AudioVisualize : MonoBehaviour
 {
 	AudioSource _audioSource;
-	public float[] _samples = new float[512];
+	public static float[] _samples = new float[512];
 
 	string path;
 
