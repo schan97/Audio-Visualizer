@@ -6,6 +6,7 @@ using UnityEditor;
 using NAudio;
 using NAudio.Wave;
 using SimpleFileBrowser;
+using UnityEngine.SceneManagement;
 
 [RequireComponent (typeof (AudioSource))]
 
@@ -190,6 +191,11 @@ public class AudioVisualize : MonoBehaviour
 	public void Quit()
 	{
 		Application.Quit();
+	}
+
+	public void SceneSelect()
+	{
+		SceneManager.LoadScene("SceneSelect");
 	}
 
 
