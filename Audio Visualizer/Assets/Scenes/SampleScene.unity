@@ -1233,6 +1233,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1029963541981188363, guid: 38cc2491b807b5e48b40a1146556f89a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1878438384}
+    - target: {fileID: 1029963541981188363, guid: 38cc2491b807b5e48b40a1146556f89a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SceneSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 1029963541981188363, guid: 38cc2491b807b5e48b40a1146556f89a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3077211848529538115, guid: 38cc2491b807b5e48b40a1146556f89a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
