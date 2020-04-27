@@ -119,7 +119,7 @@ public class AudioVisualize : MonoBehaviour
 		}
 	}
 
-	void OpenMp3File()
+	public void OpenMp3File()
 	{
 		FileBrowser.SetFilters(false, new FileBrowser.Filter("Open MP3 File", ".mp3"));
 		FileBrowser.SetDefaultFilter(".mp3");
