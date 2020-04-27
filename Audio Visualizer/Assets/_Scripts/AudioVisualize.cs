@@ -17,6 +17,11 @@ public class AudioVisualize : MonoBehaviour
 	public static float[] bandBuffer = new float[8];
 	float[] bufferDecrease = new float[8];
 
+	float[] freqBandHighest = new float[8];
+	public static float[] audioBand = new float[8];
+	public static float[] audioBandBuffer = new float[8];
+
+
 	string path;
 
 	public Text musicTitle;
@@ -31,22 +36,37 @@ public class AudioVisualize : MonoBehaviour
 
 	private bool canJump = false;
 
-    // Start is called before the first frame update
     void Start()
     {
 		audioSource = GetComponent<AudioSource>();
 		musicFileName = "Song Name";
     }
 
-    // Update is called once per frame
     void Update()
     {
 		GetSpectrumAudioSource();
 		MakeFrequencyBands();
 		BandBuffer();
+		CreateAudioBand();
+
 		ShowPlayTime();
 		ShowCurrentTitle();
 	}
+
+	void CreateAudioBand()
+	{
+		for(int i = 0; i < 8; i++)
+		{
+			if(freqBands[i] > freqBandHighest[i])
+			{
+				freqBandHighest[i] = freqBands[i];
+			}
+
+			audioBand[i] = (freqBands[i] / freqBandHighest[i]);
+			audioBandBuffer[i] = (bandBuffer[i] / freqBandHighest[i]);
+		}
+	}
+
 
 	void GetSpectrumAudioSource()
 	{
@@ -55,7 +75,7 @@ public class AudioVisualize : MonoBehaviour
 
 	void BandBuffer()
 	{
-		for(int i = 0; i < 8; i++)
+		for(int i = 0; i < 8; ++i)
 		{
 			if (freqBands[i] > bandBuffer[i])
 			{
@@ -65,8 +85,9 @@ public class AudioVisualize : MonoBehaviour
 
 			if (freqBands[i] < bandBuffer[i])
 			{
-				bufferDecrease[i] = (bandBuffer[i] - freqBands[i]) / 8;
+				bufferDecrease[i] = (bandBuffer[i] -freqBands[i])/8;
 				bandBuffer[i] -= bufferDecrease[i];
+				
 			}
 		}
 	}

@@ -140,8 +140,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   band: 4
-  startScale: 1
-  scaleMultiplier: 10
+  startScale: 10
+  scaleMultiplier: 50
   useBuffer: 1
 --- !u!114 &52879173 stripped
 MonoBehaviour:
@@ -219,8 +219,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   band: 5
-  startScale: 1
-  scaleMultiplier: 10
+  startScale: 10
+  scaleMultiplier: 50
   useBuffer: 1
 --- !u!1001 &279676696
 PrefabInstance:
@@ -289,6 +289,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2349622, guid: 55be7fbee532e9245a6c7a5ff747297f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c74d09ad546e87540a0cdc0293938d23, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55be7fbee532e9245a6c7a5ff747297f, type: 3}
 --- !u!1 &528589031 stripped
@@ -310,8 +314,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   band: 0
-  startScale: 1
-  scaleMultiplier: 10
+  startScale: 10
+  scaleMultiplier: 50
   useBuffer: 1
 --- !u!1001 &621517025
 PrefabInstance:
@@ -380,6 +384,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2349622, guid: 55be7fbee532e9245a6c7a5ff747297f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c74d09ad546e87540a0cdc0293938d23, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55be7fbee532e9245a6c7a5ff747297f, type: 3}
 --- !u!1 &705507993
@@ -541,6 +549,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2349622, guid: 55be7fbee532e9245a6c7a5ff747297f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c74d09ad546e87540a0cdc0293938d23, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55be7fbee532e9245a6c7a5ff747297f, type: 3}
 --- !u!1 &1292798301 stripped
@@ -562,8 +574,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   band: 6
-  startScale: 1
-  scaleMultiplier: 10
+  startScale: 10
+  scaleMultiplier: 50
   useBuffer: 1
 --- !u!1 &1373223943 stripped
 GameObject:
@@ -584,8 +596,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   band: 7
-  startScale: 1
-  scaleMultiplier: 10
+  startScale: 10
+  scaleMultiplier: 50
   useBuffer: 1
 --- !u!1 &1412158069 stripped
 GameObject:
@@ -606,8 +618,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   band: 1
-  startScale: 1
-  scaleMultiplier: 10
+  startScale: 10
+  scaleMultiplier: 50
   useBuffer: 1
 --- !u!1001 &1416640553
 PrefabInstance:
@@ -676,6 +688,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2349622, guid: 55be7fbee532e9245a6c7a5ff747297f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c74d09ad546e87540a0cdc0293938d23, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55be7fbee532e9245a6c7a5ff747297f, type: 3}
 --- !u!1001 &1520746980
@@ -745,6 +761,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2349622, guid: 55be7fbee532e9245a6c7a5ff747297f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c74d09ad546e87540a0cdc0293938d23, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55be7fbee532e9245a6c7a5ff747297f, type: 3}
 --- !u!114 &1566665869 stripped
@@ -778,8 +798,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   band: 3
-  startScale: 1
-  scaleMultiplier: 10
+  startScale: 10
+  scaleMultiplier: 50
   useBuffer: 1
 --- !u!1001 &1714003134
 PrefabInstance:
@@ -848,6 +868,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2349622, guid: 55be7fbee532e9245a6c7a5ff747297f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c74d09ad546e87540a0cdc0293938d23, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55be7fbee532e9245a6c7a5ff747297f, type: 3}
 --- !u!1 &1756741484
@@ -1001,6 +1025,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2349622, guid: 55be7fbee532e9245a6c7a5ff747297f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c74d09ad546e87540a0cdc0293938d23, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55be7fbee532e9245a6c7a5ff747297f, type: 3}
 --- !u!1 &2016348398 stripped
@@ -1022,8 +1050,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   band: 2
-  startScale: 1
-  scaleMultiplier: 10
+  startScale: 10
+  scaleMultiplier: 50
   useBuffer: 1
 --- !u!1001 &2085358671
 PrefabInstance:
@@ -1092,6 +1120,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2349622, guid: 55be7fbee532e9245a6c7a5ff747297f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c74d09ad546e87540a0cdc0293938d23, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55be7fbee532e9245a6c7a5ff747297f, type: 3}
 --- !u!1001 &2847862197973948923
@@ -1398,6 +1430,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SceneManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8572622133830304586, guid: 54ef9e179ed72404599037ca6fd60128,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8572622133830304587, guid: 54ef9e179ed72404599037ca6fd60128,
         type: 3}
