@@ -187,5 +187,10 @@ public class AudioVisualize : MonoBehaviour
 		}
 	}
 
+	public void Quit()
+	{
+		Application.Quit();
+	}
+
 
 }
