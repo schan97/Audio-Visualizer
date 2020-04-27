@@ -55,9 +55,9 @@ public class AudioVisualize : MonoBehaviour
 
 	void CreateAudioBand()
 	{
-		for(int i = 0; i < 8; i++)
+		for (int i = 0; i < 8; i++)
 		{
-			if(freqBands[i] > freqBandHighest[i])
+			if (freqBands[i] > freqBandHighest[i])
 			{
 				freqBandHighest[i] = freqBands[i];
 			}
@@ -75,7 +75,7 @@ public class AudioVisualize : MonoBehaviour
 
 	void BandBuffer()
 	{
-		for(int i = 0; i < 8; ++i)
+		for (int i = 0; i < 8; ++i)
 		{
 			if (freqBands[i] > bandBuffer[i])
 			{
@@ -94,28 +94,6 @@ public class AudioVisualize : MonoBehaviour
 
 	void MakeFrequencyBands()
 	{
-		/*
-		 *	22050 / 512 = 43 hertz per sample
-		 * 	
-		 * 	20-60 hertz
-		 * 	60-250 hertz
-		 * 	250-500 hertz
-		 * 	500-2000 hertz
-		 * 	2000-4000 hertz
-		 * 	4000-6000 hertz
-		 * 	6000-20000 hertz
-		 *  
-		 *  0 : 2 =	86 hertz (43*2)
-		 *  1 : 4 = 172 hertz		range 87-258
-		 *  2 : 8 = 344 hertz		259 - 602
-		 *  3 : 16 = 688 hertz		603 - 1290
-		 *  4 : 32 = 1376 hertz		1291 - 2666
-		 *  5 : 64 = 2752 hertz		2667 - 5418
-		 *  6 : 128 = 5504 hertz	5419 - 10922
-		 *  7 : 256 = 11008 hertz	10923 - 21930
-		 * 	510
-		 */
-
 		int count = 0;
 
 		for (int i = 0; i < 8; i++)
@@ -152,7 +130,7 @@ public class AudioVisualize : MonoBehaviour
 		yield return FileBrowser.WaitForLoadDialog(false, null, "Load MP3", "Select");
 		path = FileBrowser.Result;
 
-		if(FileBrowser.Success)
+		if (FileBrowser.Success)
 		{
 			byte[] audioFile = FileBrowserHelpers.ReadBytesFromFile(path);
 			musicFileName = FileBrowserHelpers.GetFilename(path);
@@ -179,7 +157,7 @@ public class AudioVisualize : MonoBehaviour
 
 	public void JumpAhead()
 	{
-		if(canJump != false)
+		if (canJump != false)
 		{
 			if (audioSource.time + 5 < audioSource.clip.length)
 			{

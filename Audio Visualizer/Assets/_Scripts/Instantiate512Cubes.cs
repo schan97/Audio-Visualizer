@@ -7,10 +7,9 @@ public class Instantiate512Cubes : MonoBehaviour
 	public GameObject cubePrefab;
 	GameObject[] cubeArray = new GameObject[512];
 	public float maxScale;
-    // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < cubeArray.Length; i++)
+        for (int i = 0; i < cubeArray.Length; i++)
 		{
 			GameObject instanceCubeArray = (GameObject)Instantiate(cubePrefab);
 			instanceCubeArray.transform.position = this.transform.position;
@@ -22,12 +21,11 @@ public class Instantiate512Cubes : MonoBehaviour
 		}
     }
 
-    // Update is called once per frame
     void Update()
     {
-        for(int i = 0; i < cubeArray.Length; i++)
+        for (int i = 0; i < cubeArray.Length; i++)
 		{
-			if(cubeArray != null)
+			if (cubeArray != null)
 			{
 				cubeArray[i].transform.localScale = new Vector3(10, (AudioVisualize.samples[i] * maxScale) + 2, 10);
 			}
