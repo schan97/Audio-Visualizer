@@ -22,6 +22,9 @@ public class AudioVisualize : MonoBehaviour
 	public static float[] audioBand = new float[8];
 	public static float[] audioBandBuffer = new float[8];
 
+	public static float amplitude, amplitudeBuffer;
+	float amplitudeHighest;
+
 
 	string path;
 
@@ -49,14 +52,34 @@ public class AudioVisualize : MonoBehaviour
 		MakeFrequencyBands();
 		BandBuffer();
 		CreateAudioBand();
+		GetAmplitude();
 
 		ShowPlayTime();
 		ShowCurrentTitle();
 	}
 
+	void GetAmplitude()
+	{
+		float currentAmp = 0;
+		float currentAmpBuffer = 0;
+		for(int i = 0; i < audioBand.Length; i++)
+		{
+			currentAmp += audioBand[i];
+			currentAmpBuffer += audioBandBuffer[i];
+		}
+
+		if(currentAmp > amplitudeHighest)
+		{
+			amplitudeHighest = currentAmp;
+		}
+
+		amplitude = currentAmp / amplitudeHighest;
+		amplitudeBuffer = currentAmpBuffer / amplitudeHighest;
+	}
+
 	void CreateAudioBand()
 	{
-		for (int i = 0; i < 8; i++)
+		for (int i = 0; i < audioBand.Length; i++)
 		{
 			if (freqBands[i] > freqBandHighest[i])
 			{
@@ -68,7 +91,6 @@ public class AudioVisualize : MonoBehaviour
 		}
 	}
 
-
 	void GetSpectrumAudioSource()
 	{
 		audioSource.GetSpectrumData(samples, 0, FFTWindow.Blackman);
@@ -76,7 +98,7 @@ public class AudioVisualize : MonoBehaviour
 
 	void BandBuffer()
 	{
-		for (int i = 0; i < 8; ++i)
+		for (int i = 0; i < bandBuffer.Length; ++i)
 		{
 			if (freqBands[i] > bandBuffer[i])
 			{
