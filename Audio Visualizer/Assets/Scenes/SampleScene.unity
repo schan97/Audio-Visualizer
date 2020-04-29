@@ -143,6 +143,7 @@ MonoBehaviour:
   startScale: 10
   scaleMultiplier: 50
   useBuffer: 1
+  useColorChange: 0
 --- !u!114 &52879173 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6878041092276278869, guid: 38cc2491b807b5e48b40a1146556f89a,
@@ -222,6 +223,7 @@ MonoBehaviour:
   startScale: 10
   scaleMultiplier: 50
   useBuffer: 1
+  useColorChange: 0
 --- !u!1001 &279676696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -317,6 +319,7 @@ MonoBehaviour:
   startScale: 10
   scaleMultiplier: 50
   useBuffer: 1
+  useColorChange: 0
 --- !u!1001 &621517025
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -583,6 +586,7 @@ MonoBehaviour:
   startScale: 10
   scaleMultiplier: 50
   useBuffer: 1
+  useColorChange: 0
 --- !u!1 &1373223943 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 129616, guid: 55be7fbee532e9245a6c7a5ff747297f,
@@ -605,6 +609,7 @@ MonoBehaviour:
   startScale: 10
   scaleMultiplier: 50
   useBuffer: 1
+  useColorChange: 0
 --- !u!1 &1412158069 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 129616, guid: 55be7fbee532e9245a6c7a5ff747297f,
@@ -627,6 +632,7 @@ MonoBehaviour:
   startScale: 10
   scaleMultiplier: 50
   useBuffer: 1
+  useColorChange: 0
 --- !u!1001 &1416640553
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -807,6 +813,7 @@ MonoBehaviour:
   startScale: 10
   scaleMultiplier: 50
   useBuffer: 1
+  useColorChange: 0
 --- !u!1001 &1714003134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1059,6 +1066,7 @@ MonoBehaviour:
   startScale: 10
   scaleMultiplier: 50
   useBuffer: 1
+  useColorChange: 0
 --- !u!1001 &2085358671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1358,6 +1366,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1878438385}
+    - target: {fileID: 7635187156156625154, guid: 38cc2491b807b5e48b40a1146556f89a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1878438384}
+    - target: {fileID: 7635187156156625154, guid: 38cc2491b807b5e48b40a1146556f89a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38cc2491b807b5e48b40a1146556f89a, type: 3}
 --- !u!1001 &8963295765470765762
