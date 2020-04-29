@@ -9,4 +9,9 @@ public class SceneSelect : MonoBehaviour
 	{
 		SceneManager.LoadScene("SampleScene");
 	}
+
+	public void selectXMas()
+	{
+		SceneManager.LoadScene("Scene2");
+	}
 }
