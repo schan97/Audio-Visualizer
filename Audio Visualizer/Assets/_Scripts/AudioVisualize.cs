@@ -18,7 +18,7 @@ public class AudioVisualize : MonoBehaviour
 	public static float[] bandBuffer = new float[8];
 	float[] bufferDecrease = new float[8];
 
-	public float[] freqBandHighest = new float[8];
+	float[] freqBandHighest = new float[8];
 	public static float[] audioBand = new float[8];
 	public static float[] audioBandBuffer = new float[8];
 
