@@ -7,11 +7,11 @@ public class LightsOnAudio : MonoBehaviour
 {
 	public int band;
 	public float minIntensity, maxIntensity;
-	Light light;
+	Light lights;
     // Start is called before the first frame update
     void Start()
     {
-		light = GetComponent<Light>();
+		lights = GetComponent<Light>();
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class LightsOnAudio : MonoBehaviour
     {
 		if(AudioVisualize.audioBand[band] > 0)
 		{
-			light.intensity = (AudioVisualize.audioBandBuffer[band] * (maxIntensity - minIntensity)) + minIntensity;
+			lights.intensity = (AudioVisualize.audioBandBuffer[band] * (maxIntensity - minIntensity)) + minIntensity;
 		}
     }
 }
