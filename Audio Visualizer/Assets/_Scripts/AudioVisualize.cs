@@ -18,12 +18,14 @@ public class AudioVisualize : MonoBehaviour
 	public static float[] bandBuffer = new float[8];
 	float[] bufferDecrease = new float[8];
 
-	float[] freqBandHighest = new float[8];
+	public float[] freqBandHighest = new float[8];
 	public static float[] audioBand = new float[8];
 	public static float[] audioBandBuffer = new float[8];
 
 	public static float amplitude, amplitudeBuffer;
 	float amplitudeHighest;
+
+	public float audioProfileVal;
 
 
 	string path;
@@ -44,7 +46,9 @@ public class AudioVisualize : MonoBehaviour
     {
 		audioSource = GetComponent<AudioSource>();
 		musicFileName = "Song Name";
-    }
+		AudioProfile(audioProfileVal);
+
+	}
 
     void Update()
     {
@@ -56,6 +60,14 @@ public class AudioVisualize : MonoBehaviour
 
 		ShowPlayTime();
 		ShowCurrentTitle();
+	}
+
+	void AudioProfile(float audioProfileVal)
+	{
+		for(int i = 0; i < freqBandHighest.Length; i++)
+		{
+			freqBandHighest[i] = audioProfileVal;
+		}
 	}
 
 	void GetAmplitude()
@@ -162,6 +174,7 @@ public class AudioVisualize : MonoBehaviour
 
 			canJump = true;
 			audioSource.time = 0;
+			AudioProfile(audioProfileVal);
 		}
 	}
 
