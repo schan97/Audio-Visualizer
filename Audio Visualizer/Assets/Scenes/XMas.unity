@@ -226,7 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   band: 0
   startScale: 4
-  scaleMultiplier: 35
+  scaleMultiplier: 30
   useBuffer: 1
   useColorChange: 1
 --- !u!1 &486848484 stripped
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   band: 6
   startScale: 4
-  scaleMultiplier: 35
+  scaleMultiplier: 30
   useBuffer: 1
   useColorChange: 1
 --- !u!1001 &496055280
@@ -418,7 +418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   band: 1
   startScale: 4
-  scaleMultiplier: 35
+  scaleMultiplier: 30
   useBuffer: 1
   useColorChange: 1
 --- !u!1 &607072459
@@ -533,7 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   band: 7
   startScale: 4
-  scaleMultiplier: 35
+  scaleMultiplier: 30
   useBuffer: 1
   useColorChange: 1
 --- !u!1001 &744835632
@@ -1236,7 +1236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   band: 5
   startScale: 4
-  scaleMultiplier: 35
+  scaleMultiplier: 30
   useBuffer: 1
   useColorChange: 1
 --- !u!1001 &1236489386
@@ -1609,7 +1609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   band: 2
   startScale: 4
-  scaleMultiplier: 35
+  scaleMultiplier: 30
   useBuffer: 1
   useColorChange: 1
 --- !u!114 &1659717974 stripped
@@ -1644,7 +1644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   band: 4
   startScale: 4
-  scaleMultiplier: 35
+  scaleMultiplier: 30
   useBuffer: 1
   useColorChange: 1
 --- !u!1 &1702477470
@@ -1854,7 +1854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   band: 3
   startScale: 4
-  scaleMultiplier: 35
+  scaleMultiplier: 30
   useBuffer: 1
   useColorChange: 1
 --- !u!1 &1887129138
