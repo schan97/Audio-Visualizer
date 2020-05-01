@@ -13,7 +13,8 @@ using UnityEngine.SceneManagement;
 public class AudioVisualize : MonoBehaviour
 {
 	AudioSource audioSource;
-	public static float[] samples = new float[512];
+	public static float[] samplesLeft = new float[512];
+	public static float[] samplesRight = new float[512];
 	public static float[] freqBands = new float[8];
 	public static float[] bandBuffer = new float[8];
 	float[] bufferDecrease = new float[8];
@@ -26,6 +27,9 @@ public class AudioVisualize : MonoBehaviour
 	float amplitudeHighest;
 
 	public float audioProfileVal;
+
+	public enum _channel { Stereo, Left, Right};
+	public _channel channel = new _channel();
 
 
 	string path;
@@ -105,7 +109,8 @@ public class AudioVisualize : MonoBehaviour
 
 	void GetSpectrumAudioSource()
 	{
-		audioSource.GetSpectrumData(samples, 0, FFTWindow.Blackman);
+		audioSource.GetSpectrumData(samplesLeft, 0, FFTWindow.Blackman);
+		audioSource.GetSpectrumData(samplesRight, 1, FFTWindow.Blackman);
 	}
 
 	void BandBuffer()
@@ -143,7 +148,21 @@ public class AudioVisualize : MonoBehaviour
 
 			for (int j = 0; j < sampleCount; j++)
 			{
-				avg += samples[count] * (count + 1);
+				if (channel == _channel.Stereo)
+				{
+					avg += (samplesLeft[count] + samplesRight[count]) * (count + 1);
+				}
+
+				if (channel == _channel.Left)
+				{
+					avg += (samplesLeft[count]) * (count + 1);
+				}
+
+				if (channel == _channel.Right)
+				{
+					avg += (samplesRight[count]) * (count + 1);
+				}
+				
 				count++;
 			}
 
