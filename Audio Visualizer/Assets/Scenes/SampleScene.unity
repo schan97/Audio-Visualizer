@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65f6efc860c3ed4493369f7135589d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioVisualize: {fileID: 1878438384}
   band: 4
   startScale: 10
   scaleMultiplier: 75
@@ -185,6 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2af1a1bc911542c40aa12d66a3af21b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioVisualize: {fileID: 1878438384}
   cubePrefab: {fileID: 129616, guid: 55be7fbee532e9245a6c7a5ff747297f, type: 3}
   maxScale: 2500
 --- !u!4 &132153443
@@ -219,6 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65f6efc860c3ed4493369f7135589d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioVisualize: {fileID: 1878438384}
   band: 5
   startScale: 10
   scaleMultiplier: 75
@@ -315,6 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65f6efc860c3ed4493369f7135589d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioVisualize: {fileID: 1878438384}
   band: 0
   startScale: 10
   scaleMultiplier: 75
@@ -582,6 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65f6efc860c3ed4493369f7135589d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioVisualize: {fileID: 1878438384}
   band: 6
   startScale: 10
   scaleMultiplier: 75
@@ -605,6 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65f6efc860c3ed4493369f7135589d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioVisualize: {fileID: 1878438384}
   band: 7
   startScale: 10
   scaleMultiplier: 75
@@ -628,6 +634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65f6efc860c3ed4493369f7135589d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioVisualize: {fileID: 1878438384}
   band: 1
   startScale: 10
   scaleMultiplier: 75
@@ -809,6 +816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65f6efc860c3ed4493369f7135589d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioVisualize: {fileID: 1878438384}
   band: 3
   startScale: 10
   scaleMultiplier: 75
@@ -1062,6 +1070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65f6efc860c3ed4493369f7135589d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioVisualize: {fileID: 1878438384}
   band: 2
   startScale: 10
   scaleMultiplier: 75

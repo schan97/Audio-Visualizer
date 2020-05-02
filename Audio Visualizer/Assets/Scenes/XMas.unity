@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65f6efc860c3ed4493369f7135589d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioVisualize: {fileID: 1598426350}
   band: 0
   startScale: 4
   scaleMultiplier: 30
@@ -247,6 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65f6efc860c3ed4493369f7135589d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioVisualize: {fileID: 1598426350}
   band: 6
   startScale: 4
   scaleMultiplier: 30
@@ -416,6 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65f6efc860c3ed4493369f7135589d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioVisualize: {fileID: 1598426350}
   band: 1
   startScale: 4
   scaleMultiplier: 30
@@ -531,6 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65f6efc860c3ed4493369f7135589d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioVisualize: {fileID: 1598426350}
   band: 7
   startScale: 4
   scaleMultiplier: 30
@@ -1140,6 +1144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c131b5ab57ebb140acb38699896a8d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioVisualize: {fileID: 1598426350}
   band: 6
   minIntensity: 1
   maxIntensity: 8
@@ -1234,6 +1239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65f6efc860c3ed4493369f7135589d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioVisualize: {fileID: 1598426350}
   band: 5
   startScale: 4
   scaleMultiplier: 30
@@ -1415,6 +1421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c131b5ab57ebb140acb38699896a8d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioVisualize: {fileID: 1598426350}
   band: 6
   minIntensity: 1
   maxIntensity: 8
@@ -1607,6 +1614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65f6efc860c3ed4493369f7135589d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioVisualize: {fileID: 1598426350}
   band: 2
   startScale: 4
   scaleMultiplier: 30
@@ -1642,6 +1650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65f6efc860c3ed4493369f7135589d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioVisualize: {fileID: 1598426350}
   band: 4
   startScale: 4
   scaleMultiplier: 30
@@ -1752,6 +1761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c131b5ab57ebb140acb38699896a8d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioVisualize: {fileID: 1598426350}
   band: 1
   minIntensity: 1
   maxIntensity: 8
@@ -1852,6 +1862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65f6efc860c3ed4493369f7135589d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioVisualize: {fileID: 1598426350}
   band: 3
   startScale: 4
   scaleMultiplier: 30
@@ -2056,6 +2067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c131b5ab57ebb140acb38699896a8d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioVisualize: {fileID: 1598426350}
   band: 1
   minIntensity: 1
   maxIntensity: 8
