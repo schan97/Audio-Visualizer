@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ParamCube : MonoBehaviour
 {
+	public AudioVisualize audioVisualize;
 	public int band;
 	public float startScale, scaleMultiplier;
 	public bool useBuffer;
@@ -22,19 +23,19 @@ public class ParamCube : MonoBehaviour
 
     void Update()
     {
-		if (useBuffer == true && AudioVisualize.audioBand[band] > 0)
+		if (useBuffer == true && audioVisualize.audioBand[band] > 0)
 		{
-			transform.localScale = new Vector3(transform.localScale.x, (AudioVisualize.audioBandBuffer[band] * scaleMultiplier) + startScale, transform.localScale.z);
+			transform.localScale = new Vector3(transform.localScale.x, (audioVisualize.audioBandBuffer[band] * scaleMultiplier) + startScale, transform.localScale.z);
 			if (useColorChange == true)
 			{
-				Color color = new Color(AudioVisualize.audioBandBuffer[band], AudioVisualize.audioBandBuffer[band], AudioVisualize.audioBandBuffer[band]);
+				Color color = new Color(audioVisualize.audioBandBuffer[band], audioVisualize.audioBandBuffer[band], audioVisualize.audioBandBuffer[band]);
 				material.SetColor("_EmissionColor", color);
 			}
 		}
 
-		if (useBuffer == false && AudioVisualize.audioBand[band] > 0)
+		if (useBuffer == false && audioVisualize.audioBand[band] > 0)
 		{
-			transform.localScale = new Vector3(transform.localScale.x, (AudioVisualize.audioBand[band] * scaleMultiplier) + startScale, transform.localScale.z);
+			transform.localScale = new Vector3(transform.localScale.x, (audioVisualize.audioBand[band] * scaleMultiplier) + startScale, transform.localScale.z);
 		}
 		
     }

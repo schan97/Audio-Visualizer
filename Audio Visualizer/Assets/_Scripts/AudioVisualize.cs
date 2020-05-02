@@ -13,24 +13,28 @@ using UnityEngine.SceneManagement;
 public class AudioVisualize : MonoBehaviour
 {
 	AudioSource audioSource;
-	public static float[] samplesLeft = new float[512];
-	public static float[] samplesRight = new float[512];
 
-	public static float[] freqBands = new float[8];
-	public static float[] bandBuffer = new float[8];
+	[HideInInspector]
+	public float[] samplesLeft;
+	public float[] samplesRight;
+
+	private float[] freqBands = new float[8];
+	private float[] bandBuffer = new float[8];
 	float[] bufferDecrease = new float[8];
 	float[] freqBandHighest = new float[8];
 
-	public static float[] freqBands64 = new float[64];
-	public static float[] bandBuffer64 = new float[64];
+	private float[] freqBands64 = new float[64];
+	private float[] bandBuffer64 = new float[64];
 	float[] bufferDecrease64 = new float[64];
 	float[] freqBandHighest64 = new float[64];
 
-	public static float[] audioBand = new float[8];
-	public static float[] audioBandBuffer = new float[8];
+	[HideInInspector]
+	public float[] audioBand;
+	public float[] audioBandBuffer;
 
-	public static float[] audioBand64 = new float[64];
-	public static float[] audioBandBuffer64 = new float[64];
+	[HideInInspector]
+	public float[] audioBand64;
+	public float[] audioBandBuffer64;
 
 	public static float amplitude, amplitudeBuffer;
 	float amplitudeHighest;
@@ -60,6 +64,15 @@ public class AudioVisualize : MonoBehaviour
 
     void Start()
     {
+		samplesLeft = new float[512];
+		samplesRight = new float[512];
+
+		audioBand = new float[8];
+		audioBandBuffer = new float[8];
+
+		audioBand64 = new float[64];
+		audioBandBuffer64 = new float[64];
+
 		audioSource = GetComponent<AudioSource>();
 		musicFileName = "Song Name";
 		AudioProfile(audioProfileVal);
@@ -242,16 +255,6 @@ public class AudioVisualize : MonoBehaviour
 			freqBands[i] = avg * 10;
 		}
 	}
-
-	/*
-	 *	0-15 = 1 sample : 16
-	 *	16-32 = 2 samples : 32
-	 *	32-39 = 4 samples : 32
-	 *	40-47 = 8 samples : 48
-	 *	48-55 = 16 samples : 128
-	 *	56-63 = 32 samples : 256
-	 *				 total : 512
-	 */
 
 	void MakeFrequencyBands64()
 	{

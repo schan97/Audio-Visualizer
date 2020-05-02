@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Instantiate512Cubes : MonoBehaviour
 {
+	public AudioVisualize audioVisualize;
 	public GameObject cubePrefab;
 	GameObject[] cubeArray = new GameObject[512];
 	public float maxScale;
@@ -21,13 +22,14 @@ public class Instantiate512Cubes : MonoBehaviour
 		}
     }
 
+
     void Update()
     {
         for (int i = 0; i < cubeArray.Length; i++)
 		{
 			if (cubeArray != null)
 			{
-				cubeArray[i].transform.localScale = new Vector3(10, ((AudioVisualize.samplesLeft[i] + AudioVisualize.samplesRight[i]) * maxScale) + 2, 10);
+				cubeArray[i].transform.localScale = new Vector3(10, ((audioVisualize.samplesLeft[i] + audioVisualize.samplesRight[i]) * maxScale) + 2, 10);
 			}
 		}
     }
