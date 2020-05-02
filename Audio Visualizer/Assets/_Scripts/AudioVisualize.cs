@@ -15,16 +15,28 @@ public class AudioVisualize : MonoBehaviour
 	AudioSource audioSource;
 	public static float[] samplesLeft = new float[512];
 	public static float[] samplesRight = new float[512];
+
 	public static float[] freqBands = new float[8];
 	public static float[] bandBuffer = new float[8];
 	float[] bufferDecrease = new float[8];
-
 	float[] freqBandHighest = new float[8];
+
+	public static float[] freqBands64 = new float[64];
+	public static float[] bandBuffer64 = new float[64];
+	float[] bufferDecrease64 = new float[64];
+	float[] freqBandHighest64 = new float[64];
+
 	public static float[] audioBand = new float[8];
 	public static float[] audioBandBuffer = new float[8];
 
+	public static float[] audioBand64 = new float[64];
+	public static float[] audioBandBuffer64 = new float[64];
+
 	public static float amplitude, amplitudeBuffer;
 	float amplitudeHighest;
+
+	public static float amplitude64, amplitudeBuffer64;
+	float amplitudeHighest64;
 
 	public float audioProfileVal;
 
@@ -58,9 +70,16 @@ public class AudioVisualize : MonoBehaviour
     {
 		GetSpectrumAudioSource();
 		MakeFrequencyBands();
+		MakeFrequencyBands64();
+
 		BandBuffer();
+		BandBuffer64();
+
 		CreateAudioBand();
+		CreateAudioBand64();
+
 		GetAmplitude();
+		GetAmplitude64();
 
 		ShowPlayTime();
 		ShowCurrentTitle();
@@ -93,6 +112,25 @@ public class AudioVisualize : MonoBehaviour
 		amplitudeBuffer = currentAmpBuffer / amplitudeHighest;
 	}
 
+	void GetAmplitude64()
+	{
+		float currentAmp64 = 0;
+		float currentAmpBuffer64 = 0;
+		for (int i = 0; i < audioBand64.Length; i++)
+		{
+			currentAmp64 += audioBand64[i];
+			currentAmpBuffer64 += audioBandBuffer64[i];
+		}
+
+		if (currentAmp64 > amplitudeHighest64)
+		{
+			amplitudeHighest64 = currentAmp64;
+		}
+
+		amplitude64 = currentAmp64 / amplitudeHighest64;
+		amplitudeBuffer64 = currentAmpBuffer64 / amplitudeHighest64;
+	}
+
 	void CreateAudioBand()
 	{
 		for (int i = 0; i < audioBand.Length; i++)
@@ -104,6 +142,20 @@ public class AudioVisualize : MonoBehaviour
 
 			audioBand[i] = (freqBands[i] / freqBandHighest[i]);
 			audioBandBuffer[i] = (bandBuffer[i] / freqBandHighest[i]);
+		}
+	}
+
+	void CreateAudioBand64()
+	{
+		for (int i = 0; i < audioBand64.Length; i++)
+		{
+			if (freqBands64[i] > freqBandHighest64[i])
+			{
+				freqBandHighest64[i] = freqBands64[i];
+			}
+
+			audioBand64[i] = (freqBands64[i] / freqBandHighest64[i]);
+			audioBandBuffer64[i] = (bandBuffer64[i] / freqBandHighest64[i]);
 		}
 	}
 
@@ -128,6 +180,25 @@ public class AudioVisualize : MonoBehaviour
 				bufferDecrease[i] = (bandBuffer[i] -freqBands[i])/8;
 				bandBuffer[i] -= bufferDecrease[i];
 				
+			}
+		}
+	}
+
+	void BandBuffer64()
+	{
+		for (int i = 0; i < bandBuffer64.Length; ++i)
+		{
+			if (freqBands64[i] > bandBuffer64[i])
+			{
+				bandBuffer64[i] = freqBands64[i];
+				bufferDecrease64[i] = 0.005f;
+			}
+
+			if (freqBands64[i] < bandBuffer64[i])
+			{
+				bufferDecrease64[i] = (bandBuffer64[i] - freqBands64[i]) / 8;
+				bandBuffer64[i] -= bufferDecrease64[i];
+
 			}
 		}
 	}
@@ -169,6 +240,62 @@ public class AudioVisualize : MonoBehaviour
 			avg /= count;
 
 			freqBands[i] = avg * 10;
+		}
+	}
+
+	/*
+	 *	0-15 = 1 sample : 16
+	 *	16-32 = 2 samples : 32
+	 *	32-39 = 4 samples : 32
+	 *	40-47 = 8 samples : 48
+	 *	48-55 = 16 samples : 128
+	 *	56-63 = 32 samples : 256
+	 *				 total : 512
+	 */
+
+	void MakeFrequencyBands64()
+	{
+		int count = 0;
+		int sampleCount = 1;
+		int power = 0;
+
+		for (int i = 0; i < 64; i++)
+		{
+			float avg = 0;
+
+			if (i == 16 || i == 32 || i == 48 || i == 56)
+			{
+				power++;
+				sampleCount = (int)Mathf.Pow(2, power);
+				if(power == 3)
+				{
+					sampleCount -= 2;
+				}
+			}
+
+			for (int j = 0; j < sampleCount; j++)
+			{
+				if (channel == _channel.Stereo)
+				{
+					avg += (samplesLeft[count] + samplesRight[count]) * (count + 1);
+				}
+
+				if (channel == _channel.Left)
+				{
+					avg += (samplesLeft[count]) * (count + 1);
+				}
+
+				if (channel == _channel.Right)
+				{
+					avg += (samplesRight[count]) * (count + 1);
+				}
+
+				count++;
+			}
+
+			avg /= count;
+
+			freqBands64[i] = avg * 80;
 		}
 	}
 
