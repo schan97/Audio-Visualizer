@@ -36,7 +36,11 @@ public class ParamCube : MonoBehaviour
 		if (useBuffer == false && audioVisualize.audioBand[band] > 0)
 		{
 			transform.localScale = new Vector3(transform.localScale.x, (audioVisualize.audioBand[band] * scaleMultiplier) + startScale, transform.localScale.z);
+			if (useColorChange == true)
+			{
+				Color color = new Color(audioVisualize.audioBand[band], audioVisualize.audioBand[band], audioVisualize.audioBand[band]);
+				material.SetColor("_EmissionColor", color);
+			}
 		}
-		
     }
 }

@@ -36,10 +36,10 @@ public class AudioVisualize : MonoBehaviour
 	public float[] audioBand64;
 	public float[] audioBandBuffer64;
 
-	public static float amplitude, amplitudeBuffer;
+	public float amplitude, amplitudeBuffer;
 	float amplitudeHighest;
 
-	public static float amplitude64, amplitudeBuffer64;
+	public float amplitude64, amplitudeBuffer64;
 	float amplitudeHighest64;
 
 	public float audioProfileVal;
