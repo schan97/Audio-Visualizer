@@ -14,6 +14,9 @@ public class AudioVisualize : MonoBehaviour
 {
 	AudioSource audioSource;
 
+	GameObject varUI;
+	GameObject varMainCam;
+
 	[HideInInspector]
 	public float[] samplesLeft;
 	public float[] samplesRight;
@@ -36,9 +39,11 @@ public class AudioVisualize : MonoBehaviour
 	public float[] audioBand64;
 	public float[] audioBandBuffer64;
 
+	[HideInInspector]
 	public float amplitude, amplitudeBuffer;
 	float amplitudeHighest;
 
+	[HideInInspector]
 	public float amplitude64, amplitudeBuffer64;
 	float amplitudeHighest64;
 
@@ -64,6 +69,7 @@ public class AudioVisualize : MonoBehaviour
 
     void Start()
     {
+
 		samplesLeft = new float[512];
 		samplesRight = new float[512];
 
@@ -76,6 +82,9 @@ public class AudioVisualize : MonoBehaviour
 		audioSource = GetComponent<AudioSource>();
 		musicFileName = "Song Name";
 		AudioProfile(audioProfileVal);
+
+		varUI = GameObject.FindWithTag("UI");
+		varMainCam = GameObject.FindWithTag("MainCamera");
 
 	}
 
@@ -304,6 +313,8 @@ public class AudioVisualize : MonoBehaviour
 
 	public void OpenMp3File()
 	{
+		varUI.GetComponent<UIControl>().enabled = false;
+		varMainCam.GetComponent<ExtendedFlycam>().enabled = false;
 		FileBrowser.SetFilters(false, new FileBrowser.Filter("Open MP3 File", ".mp3"));
 		FileBrowser.SetDefaultFilter(".mp3");
 		StartCoroutine(ShowLoadDialogCoroutine());
@@ -324,7 +335,12 @@ public class AudioVisualize : MonoBehaviour
 			canJump = true;
 			audioSource.time = 0;
 			AudioProfile(audioProfileVal);
+
 		}
+
+		varUI.GetComponent<UIControl>().enabled = true;
+		varMainCam.GetComponent<ExtendedFlycam>().enabled = true;
+
 	}
 
 	void ShowCurrentTitle()
