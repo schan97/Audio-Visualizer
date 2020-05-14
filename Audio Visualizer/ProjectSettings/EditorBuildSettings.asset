@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/XMas.unity
     guid: d90ab23e2b288af42bace0951dd1af61
+  - enabled: 1
+    path: Assets/Scenes/InTheClouds.unity
+    guid: 0903a5f7cc0988b47a87c4b12e104723
   m_configObjects: {}

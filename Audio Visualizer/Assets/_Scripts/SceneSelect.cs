@@ -14,4 +14,9 @@ public class SceneSelect : MonoBehaviour
 	{
 		SceneManager.LoadScene("XMas");
 	}
+
+	public void selectInTheClouds()
+	{
+		SceneManager.LoadScene("InTheClouds");
+	}
 }
