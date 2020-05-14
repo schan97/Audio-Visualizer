@@ -315,6 +315,7 @@ public class AudioVisualize : MonoBehaviour
 	{
 		varUI.GetComponent<UIControl>().enabled = false;
 		varMainCam.GetComponent<ExtendedFlycam>().enabled = false;
+
 		FileBrowser.SetFilters(false, new FileBrowser.Filter("Open MP3 File", ".mp3"));
 		FileBrowser.SetDefaultFilter(".mp3");
 		StartCoroutine(ShowLoadDialogCoroutine());
