@@ -113,6 +113,11 @@ public class AudioVisualize : MonoBehaviour
 		{
 			freqBandHighest[i] = audioProfileVal;
 		}
+
+		for(int i = 0; i < freqBandHighest64.Length; i++)
+		{
+			freqBandHighest64[i] = audioProfileVal;
+		}
 	}
 
 	void GetAmplitude()

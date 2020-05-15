@@ -4668,6 +4668,11 @@ PrefabInstance:
       propertyPath: clipTime
       value: 
       objectReference: {fileID: 370527470}
+    - target: {fileID: 8963295765012370226, guid: 54ef9e179ed72404599037ca6fd60128,
+        type: 3}
+      propertyPath: audioProfileVal
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54ef9e179ed72404599037ca6fd60128, type: 3}
 --- !u!1001 &766210964
